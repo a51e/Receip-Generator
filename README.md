@@ -15,7 +15,7 @@
     <br/>
     <a href="https://discord.gg/ueHSXHquHb">Discord</a>
     ・
-    <a href="https://youtu.be/p38UJEIuORU?si=TdACEKIqXiUV0Tx4">Sowcase</a>
+    <a href="https://youtu.be/p38UJEIuORU?si=TdACEKIqXiUV0Tx4">Showcase</a>
   </p>
 </p>
 
