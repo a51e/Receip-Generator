@@ -6,7 +6,7 @@
     <img src="https://cdn.discordapp.com/attachments/1086987915642552410/1313593937935466687/maisonv2.png?ex=67515bf0&is=67500a70&hm=e615cee33e93787a8ebaf23cbdded40f2064615d35eb60813081bd0bd4dd9912&" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">[Receip Generator] - Maison</h3>
+  <h3 align="center">[Receipt Generator] - Maison</h3>
 
   <p align="center">
     This is a discord bot that generates receipts for StockX, Goat, Apple and more. This is the perfect thing to make reselling more safe.
@@ -16,6 +16,8 @@
     <a href="https://discord.gg/maison">Discord</a>
     ・
     <a href="https://youtu.be/ut8Yj_lU9J8?si=FuhXKSF-XgFgzQFt">Showcase</a>
+    ・
+    <a href="https://maisonreceipts.cc">Website</a>
   </p>
 </p>
 
