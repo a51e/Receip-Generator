@@ -1,0 +1,9 @@
+discord.py
+aiohttp
+requests
+beautifulsoup4
+colorama
+flask
+pystyle
+faker
+python-dotenv

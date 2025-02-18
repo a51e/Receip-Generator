@@ -1,0 +1,935 @@
+﻿
+<html>
+ <head>
+  <style type="text/css">
+   h4 
+    {
+        text-align: left;
+    }
+
+@media screen 
+{
+
+	.headerLineTitle
+	{
+		width:1.5in;
+		display:inline-block;
+		margin:0in;
+		margin-bottom:.0001pt;
+		font-size:11.0pt;
+		font-family:"Calibri","sans-serif";
+		font-weight:bold;
+	}
+
+	.headerLineText
+	{
+		display:inline;
+		margin:0in;
+		margin-bottom:.0001pt;
+		font-size:11.0pt;
+		font-family:"Calibri","sans-serif";
+		font-weight:normal;
+	}
+
+   .pageHeader
+   {
+		font-size:14.0pt;
+		font-family:"Calibri","sans-serif";
+		font-weight:bold;
+		visibility:hidden;
+		display:none;
+   }   
+}
+
+@media print 
+{
+	.headerLineTitle
+	{
+		width:1.5in;
+		display:inline-block;
+		margin:0in;
+		margin-bottom:.0001pt;
+		font-size:11.0pt;
+		font-family:"Calibri","sans-serif";
+		font-weight:bold;
+	}
+
+	.headerLineText
+	{
+		display:inline;
+		margin:0in;
+		margin-bottom:.0001pt;
+		font-size:11.0pt;
+		font-family:"Calibri","sans-serif";
+		font-weight:normal;
+	}
+
+   .pageHeader
+   {
+		font-size:14.0pt;
+		font-family:"Calibri","sans-serif";
+		font-weight:bold;
+		visibility:visible;
+		display:block;
+   }
+
+}
+  </style>
+  <style>
+   .ssBtnDefault{position:absolute;z-index:100000000;background:none;border:none;outline:none;right:0;cursor:pointer;width:26px;height:26px;margin:0;padding:0;top:8px;right:8px;opacity:.6;pointer-events:all;transition-duration:.25s}.ssBtnDefault:hover{opacity:1 !important;transition-duration:.25s}.ssBtnDefault .fade{transition-duration:5s;opacity:0}.ssBtnYouTube{background:none;border:none;margin-right:20px !important;padding-top:0px !important;width:25px !important}.ytp-embed .ssBtnYouTube{width:20px !important;margin-right:15px !important}.ssBtnVimeo{height:2rem !important;width:2rem !important;margin-top:8px !important}.ssBtnVimeo button{width:100% !important;height:100% !important}.ssBtnVimeo button svg{width:19px}.ssBtnNetflix{background:none;border:none;cursor:pointer;width:4rem;margin:0 .5rem;display:inline-block;flex-shrink:0}.ssBtnNetflix>svg{transform:translateY(-0.3rem)}.ssBtnNetflix:hover{transform:scale(1.2);transition-duration:.25s}.ssBtnHulu{width:27px;margin-top:4px;margin-right:10px;opacity:.7;cursor:pointer}.ssBtnHulu:hover{opacity:1}.ssBtnAmazon{margin-right:1.5vw;outline:none;cursor:pointer;opacity:.8}.ssBtnAmazon:hover{opacity:1}@media(min-width: 1200px){.ssBtnAmazon{width:1.6666666667vw;height:1.6666666667vw}}@media(max-width: 1199px){.ssBtnAmazon{width:20px;height:20px}}.ssBtnHBO{width:48px;height:48px;position:relative;opacity:.7;cursor:pointer;display:flex;justify-content:center;align-items:center}.ssBtnHBO:hover{opacity:1;transform:scale(1.2)}.ssBtnHBO svg{width:24px;height:24px}.ssBtnDisney{opacity:.7}.ssBtnDisney:hover{opacity:1}.ssBtnDisney svg{width:25px !important;height:31px !important;padding-top:4px;margin-right:7px}.ssBtnApple{cursor:pointer;opacity:.7}.ssBtnApple:hover{opacity:1}.ssBtnApple svg{width:22px !important;height:22px !important;margin-right:2px !important}body #ssTempHolder{position:fixed;z-index:1000000000000;width:100%;height:100%;top:0;pointer-events:none}body #ssTempHolder video{width:auto !important;height:auto !important;max-width:100% !important;max-height:100% !important;top:0 !important;left:0 !important;transform:none !important}body.ssTakeScreenshot .ssElement{z-index:100000000000 !important}body.ssTakeScreenshot.ssNetflix [data-uia=video-canvas]{z-index:10000000}body.ssTakeScreenshot.ssNetflix video{background-color:#000}body.ssTakeScreenshot.ssNetflix .player-timedtext{display:none !important}body.ssTakeScreenshot.ssNetflix.showSubs .player-timedtext{display:block !important}body.ssTakeScreenshot.ssAmazon .scalingVideoContainer{z-index:99999999 !important}body.ssTakeScreenshot.ssDisney .btm-media-overlays-container{display:none}body.ssTakeScreenshot.ssDisney .dss-hls-subtitle-overlay{display:none}body.ssTakeScreenshot.ssDisney.showSubs .dss-hls-subtitle-overlay{display:block}body.ssTakeScreenshot.ssHulu .ContentPlayer__contentArea{z-index:10000000000;position:relative}body.ssTakeScreenshot.ssHulu .ClosedCaption{display:none}body.ssTakeScreenshot.ssHulu.showSubs .ClosedCaption{display:block}body.ssTakeScreenshot.ssHulu.showSubs .ClosedCaption .ClosedCaption__outband{bottom:30px !important}body.ssTakeScreenshot.ssHBO video{z-index:99999999}body.ssTakeScreenshot.ssHBO *:has(video){z-index:99999999}body.ssTakeScreenshot.ssYoutube .html5-video-container,body.ssTakeScreenshot.ssYoutube .ytp-caption-window-container{z-index:999999999 !important}body.ssTakeScreenshot.ssApple #apple-music-video-player{z-index:999999999 !important}body.ssTakeScreenshot.ssApple .scrim{display:none}body .ssWrapper{overflow:hidden}body .ssNotification{display:flex;width:100%;height:4rem;justify-content:center;align-items:center;position:fixed;z-index:1000000000;top:-4rem;animation-name:notification;animation-duration:2s;animation-iteration-count:1}@keyframes notification{0%{top:-4rem}25%{top:3rem}85%{top:3rem}}body .ssNotification .ssNContent{position:absolute;z-index:1000000000;padding:.75rem 1.25em;margin-bottom:1em;border:1px solid rgba(0,0,0,0);border-radius:.25em;font-size:12px;height:fit-content;top:0}body .ssNotification .ssNContent.success{background-color:#d4edda;border-color:#c3e6cb;color:#155724}body .ssNotification .ssNContent.fail{background-color:#edd4d4;border-color:#e6c3c3;color:#b62424}body .ssModal{display:none;position:fixed;z-index:100000000;right:20px;opacity:0;background-color:#fffefa;border-radius:3px;padding:25px;color:#525252;font-family:muli,sans-serif;box-shadow:0px 4px 8px 0px rgba(0,0,0,.15);animation-name:animateOn;animation-duration:.2s;animation-fill-mode:forwards}body .ssModal.visible{display:block}body .ssModal *{vertical-align:middle;line-height:normal;font-weight:normal}@keyframes animateOn{from{opacity:0;top:0px}to{opacity:1;top:20px}}body .ssModal .close{position:absolute;right:10px;top:10px;cursor:pointer;opacity:.5;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI3LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0NDMuNCA0NDMuNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQzLjQgNDQzLjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZD0iTTYuOCw0MDMuNWwxODEuOC0xODEuOEw2LjgsMzkuOWMtNS45LTUuOS04LjItMTQuNS02LTIyLjZDMyw5LjIsOS4yLDMsMTcuMywwLjhjOC4xLTIuMiwxNi43LDAuMSwyMi42LDZsMTgxLjgsMTgxLjgKCUw0MDMuNSw2LjhjNS45LTUuOSwxNC41LTguMiwyMi42LTZjOC4xLDIuMiwxNC40LDguNCwxNi41LDE2LjVjMi4yLDguMS0wLjEsMTYuNy02LDIyLjZMMjU0LjcsMjIxLjdsMTgxLjgsMTgxLjgKCWM1LjksNS45LDguMiwxNC41LDYsMjIuNmMtMi4yLDguMS04LjQsMTQuNC0xNi41LDE2LjVjLTguMSwyLjItMTYuNy0wLjEtMjIuNi02TDIyMS43LDI1NC43TDM5LjksNDM2LjVjLTUuOSw1LjktMTQuNSw4LjItMjIuNiw2CglDOS4yLDQ0MC40LDMsNDM0LjEsMC44LDQyNkMtMS40LDQxOCwwLjksNDA5LjQsNi44LDQwMy41TDYuOCw0MDMuNXoiLz4KPC9zdmc+Cg==);width:10px;height:10px}body .ssModal .ssButtons{margin-top:25px;text-align:right}body .ssModal .ssButtons .ssButton,body .ssModal .ssButtons a .ssButton{display:inline-block;height:20px;padding:3px 12px 3px;margin-left:14px;border-radius:4px;box-shadow:0px 4px 8px 0px rgba(0,0,0,.15);background-color:#fff;font-size:12px;color:#525252;line-height:20px;font-weight:normal;cursor:pointer;text-decoration:none}body .ssModal .ssButtons .ssButton .emoji,body .ssModal .ssButtons a .ssButton .emoji{font-size:15px;vertical-align:bottom}body .ssModal .ssButtons .ssButton.blue,body .ssModal .ssButtons a .ssButton.blue{background-color:#19acef;color:#fff}body .ssModal .icon{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI1LjIuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIKCSBpZD0iTGF5ZXJfMSIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgODMuOSIKCSBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMDAgODMuOTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiMwMEFERUY7fQo8L3N0eWxlPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zNS42LDk1Mi40Yy0xLjMsMC0yLjQsMS0yLjksMS44bC01LjYsMTEuMUgxMWMtNiwwLTExLDUtMTEsMTF2NDljMCw2LDUsMTEsMTEsMTFoNzhjNiwwLDExLTUsMTEtMTF2LTQ5CgkJYzAtNi01LTExLTExLTExSDcyLjlsLTUuNi0xMS4xYy0wLjUtMS4xLTEuNi0xLjgtMi45LTEuOEwzNS42LDk1Mi40TDM1LjYsOTUyLjR6IE0zNy42LDk1OC44aDI1LjJsNS41LDExLjEKCQljMC41LDEuMSwxLjYsMS44LDIuOSwxLjhoMTguMWMyLjYsMCw0LjUsMS45LDQuNSw0LjV2NDljMCwyLjYtMS45LDQuNS00LjUsNC41SDExLjFjLTIuNiwwLTQuNS0xLjktNC41LTQuNXYtNDkKCQljMC0yLjYsMS45LTQuNSw0LjUtNC41aDE4LjFjMS4xLDAsMi40LTAuOCwyLjktMS44TDM3LjYsOTU4Ljh6IE01MC4yLDk3OS44Yy0xMS42LDAtMjEsOS40LTIxLDIxczkuNCwyMSwyMSwyMXMyMS05LjQsMjEtMjEKCQlTNjEuOCw5NzkuOCw1MC4yLDk3OS44eiBNNTAuMiw5ODYuMmM4LjEsMCwxNC41LDYuNSwxNC41LDE0LjVzLTYuNSwxNC41LTE0LjUsMTQuNXMtMTQuNS02LjUtMTQuNS0xNC41UzQyLjEsOTg2LjIsNTAuMiw5ODYuMnoiLz4KPC9nPgo8L3N2Zz4K);background-repeat:no-repeat;width:30px;height:30px;vertical-align:top;margin-right:22px;margin-top:2px;display:inline-block}body .ssModal .body{display:inline-block;width:315px}body .ssModal .body .title{font-size:15px;font-weight:600;margin-bottom:7px}body .ssModal .body .description{font-size:13px;font-weight:lighter}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Njc3MvU2NyZWVuc2hvdENvbnRyb2wvX2J1dHRvbnMuc2NzcyIsIndlYnBhY2s6Ly8uL3Njc3MvU2NyZWVuc2hvdENvbnRyb2wuc2NzcyIsIndlYnBhY2s6Ly8uL3Njc3MvU2NyZWVuc2hvdENvbnRyb2wvX25vdGlmaWNhdGlvbnMuc2NzcyIsIndlYnBhY2s6Ly8uL3Njc3MvU2NyZWVuc2hvdENvbnRyb2wvX21vZGFsLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsY0FFQyxpQkFBQSxDQUNBLGlCQUFBLENBQ0EsZUFBQSxDQUNBLFdBQUEsQ0FDQSxZQUFBLENBQ0EsT0FBQSxDQUNBLGNBQUEsQ0FFQSxVQUFBLENBQ0EsV0FBQSxDQUNBLFFBQUEsQ0FDQSxTQUFBLENBQ0EsT0FBQSxDQUNBLFNBQUEsQ0FFQSxVQUFBLENBQ0Esa0JBQUEsQ0FFRyx3QkFBQSxDQUVBLG9CQUNJLG9CQUFBLENBQ0Esd0JBQUEsQ0FHSixvQkFDSSxzQkFBQSxDQUNBLFNBQUEsQ0FRUixjQUVDLGVBQUEsQ0FDQSxXQUFBLENBRUEsNEJBQUEsQ0FDRywwQkFBQSxDQUNBLHFCQUFBLENBRUgseUJBQ0MscUJBQUEsQ0FDQSw0QkFBQSxDQUlGLFlBRUMsc0JBQUEsQ0FDRyxxQkFBQSxDQUVBLHlCQUFBLENBRUgsbUJBRUMscUJBQUEsQ0FDQSxzQkFBQSxDQUVBLHVCQUNDLFVBQUEsQ0FNSCxjQUNDLGVBQUEsQ0FDQSxXQUFBLENBQ0EsY0FBQSxDQUVBLFVBQUEsQ0FFQSxjQUFBLENBR0Esb0JBQUEsQ0FDQSxhQUFBLENBVUEsa0JBRUMsNkJBQUEsQ0FJRSxvQkFDSSxvQkFBQSxDQUNILHdCQUFBLENBSUwsV0FFQyxVQUFBLENBQ0EsY0FBQSxDQUNBLGlCQUFBLENBQ0EsVUFBQSxDQUNBLGNBQUEsQ0FFQSxpQkFDQyxTQUFBLENBSUYsYUFDQyxrQkFBQSxDQUVBLFlBQUEsQ0FFRSxjQUFBLENBQ0EsVUFBQSxDQUlDLG1CQUNJLFNBQUEsQ0FJUiwwQkFBQSxhQUFBLG9CQUFBLENBQUEscUJBQUEsQ0FBQSxDQUNBLDBCQUFBLGFBQUEsVUFBQSxDQUFBLFdBQUEsQ0FBQSxDQUdBLFVBRUksVUFBQSxDQUNBLFdBQUEsQ0FDQSxpQkFBQSxDQUNBLFVBQUEsQ0FDQSxjQUFBLENBQ0EsWUFBQSxDQUNBLHNCQUFBLENBQ0Esa0JBQUEsQ0FFSCxnQkFDQyxTQUFBLENBQ0Esb0JBQUEsQ0FHRCxjQUNDLFVBQUEsQ0FDQSxXQUFBLENBSUYsYUFHSSxVQUFBLENBRUgsbUJBQ0MsU0FBQSxDQUdELGlCQUNDLHFCQUFBLENBQ0Esc0JBQUEsQ0FDQSxlQUFBLENBQ0EsZ0JBQUEsQ0FJRixZQUlDLGNBQUEsQ0FHRyxVQUFBLENBRUgsa0JBQ0MsU0FBQSxDQUdELGdCQUNDLHFCQUFBLENBQ0Esc0JBQUEsQ0FDQSwyQkFBQSxDQzNMRCxtQkFDQyxjQUFBLENBQ0EscUJBQUEsQ0FDQSxVQUFBLENBQ0EsV0FBQSxDQUNBLEtBQUEsQ0FDQSxtQkFBQSxDQUVBLHlCQUNDLHFCQUFBLENBQ0Esc0JBQUEsQ0FDQSx5QkFBQSxDQUNBLDBCQUFBLENBQ0EsZ0JBQUEsQ0FDQSxpQkFBQSxDQUNBLHlCQUFBLENBTUQsaUNBQ0MsK0JBQUEsQ0FLQSx3REFDQyxnQkFBQSxDQUdELHNDQUNDLHFCQUFBLENBSUQsa0RBRUMsdUJBQUEsQ0FLQSwyREFFQyx3QkFBQSxDQVFGLHNEQUNDLDJCQUFBLENBTUQsNkRBQ0MsWUFBQSxDQUdELHlEQUNDLFlBQUEsQ0FLQSxrRUFDQyxhQUFBLENBTUYseURBQ0MsbUJBQUEsQ0FDRyxpQkFBQSxDQUdKLDRDQUNDLFlBQUEsQ0FJQSxxREFDQyxhQUFBLENBRUEsNkVBQ0Msc0JBQUEsQ0FRSCxrQ0FDQyxnQkFBQSxDQUdELHlDQUNDLGdCQUFBLENBT0QscUhBQ0MsNEJBQUEsQ0FLRCx3REFDQyw0QkFBQSxDQUdELHFDQUNDLFlBQUEsQ0FLSCxnQkFDQyxlQUFBLENDcElGLHFCQUVJLFlBQUEsQ0FDQSxVQUFBLENBQ0EsV0FBQSxDQUNBLHNCQUFBLENBQ0Esa0JBQUEsQ0FDQSxjQUFBLENBQ0Esa0JBQUEsQ0FDQSxTQUFBLENBRUEsMkJBQUEsQ0FDQSxxQkFBQSxDQUNBLDJCQUFBLENBRUEsd0JBQ0ksR0FBQSxTQUFBLENBQ0EsSUFBQSxRQUFBLENBQ0EsSUFBQSxRQUFBLENBQUEsQ0FHSixpQ0FFSSxpQkFBQSxDQUNBLGtCQUFBLENBQ0EscUJBQUEsQ0FDQSxpQkFBQSxDQUNBLDhCQUFBLENBQ0EsbUJBQUEsQ0FDQSxjQUFBLENBQ0Esa0JBQUEsQ0FDQSxLQUFBLENBRUEseUNBQ0ksd0JBQUEsQ0FDQSxvQkFBQSxDQUNBLGFBQUEsQ0FHSixzQ0FDSSx3QkFBQSxDQUNBLG9CQUFBLENBQ0EsYUFBQSxDQzFDWixjQUVJLFlBQUEsQ0FNQSxjQUFBLENBQ0EsaUJBQUEsQ0FFQSxVQUFBLENBRUEsU0FBQSxDQUVBLHdCQUFBLENBQ0EsaUJBQUEsQ0FFQSxZQUFBLENBRUEsYUFBQSxDQUNBLDJCQUFBLENBUUEsMENBQUEsQ0FFQSx3QkFBQSxDQUNBLHNCQUFBLENBQ0EsNEJBQUEsQ0E3QkEsc0JBQ0ksYUFBQSxDQWtCSixnQkFDSSxxQkFBQSxDQUNBLGtCQUFBLENBQ0Esa0JBQUEsQ0FTSixxQkFDSSxLQUNJLFNBQUEsQ0FDQSxPQUFBLENBRUosR0FDSSxTQUFBLENBQ0EsUUFBQSxDQUFBLENBSVIscUJBQ0ksaUJBQUEsQ0FDQSxVQUFBLENBQ0EsUUFBQSxDQUNBLGNBQUEsQ0FDQSxVQUFBLENBRUEsd0RBQUEsQ0FFQSxVQUFBLENBQ0EsV0FBQSxDQUlKLHlCQUVJLGVBQUEsQ0FDQSxnQkFBQSxDQUVBLHdFQUNJLG9CQUFBLENBRUEsV0FBQSxDQUVBLG9CQUFBLENBQ0EsZ0JBQUEsQ0FFQSxpQkFBQSxDQUNBLDBDQUFBLENBQ0EscUJBQUEsQ0FFQSxjQUFBLENBQ0EsYUFBQSxDQUNBLGdCQUFBLENBQ0Esa0JBQUEsQ0FFQSxjQUFBLENBRUEsb0JBQUEsQ0FFQSxzRkFDSSxjQUFBLENBQ0EscUJBQUEsQ0FHSixrRkFDSSx3QkFBQSxDQUNBLFVBQUEsQ0FLWixvQkFDSSx3REFBQSxDQUNBLDJCQUFBLENBRUEsVUFBQSxDQUNBLFdBQUEsQ0FFQSxrQkFBQSxDQUNBLGlCQUFBLENBQ0EsY0FBQSxDQUVBLG9CQUFBLENBR0osb0JBRUksb0JBQUEsQ0FDQSxXQUFBLENBRUEsMkJBQ0ksY0FBQSxDQUNBLGVBQUEsQ0FDQSxpQkFBQSxDQUVKLGlDQUNJLGNBQUEsQ0FDQSxtQkFBQSIsInNvdXJjZXNDb250ZW50IjpbIi5zc0J0bkRlZmF1bHQge1xuXHRcblx0cG9zaXRpb246IGFic29sdXRlO1xuXHR6LWluZGV4OiAxMDAwMDAwMDA7XG5cdGJhY2tncm91bmQ6bm9uZTtcblx0Ym9yZGVyOiBub25lO1xuXHRvdXRsaW5lOiBub25lO1xuXHRyaWdodDowO1xuXHRjdXJzb3I6IHBvaW50ZXI7XG5cdFxuXHR3aWR0aDogMjZweDtcblx0aGVpZ2h0OiAyNnB4O1xuXHRtYXJnaW46IDA7Ly81JSA4cHggMDtcblx0cGFkZGluZzowO1xuXHR0b3A6OHB4O1xuXHRyaWdodDo4cHg7XG5cdFxuXHRvcGFjaXR5OiAuNjtcblx0cG9pbnRlci1ldmVudHM6IGFsbDtcblx0Lyp0cmFuc2l0aW9uLWZpbGwtbW9kZTogZm9yd2FyZHM7Ki9cbiAgICB0cmFuc2l0aW9uLWR1cmF0aW9uOiAuMjVzO1xuXG4gICAgJjpob3ZlciB7XG4gICAgICAgIG9wYWNpdHk6IDEgIWltcG9ydGFudDsgXG4gICAgICAgIHRyYW5zaXRpb24tZHVyYXRpb246IC4yNXM7XG4gICAgfVxuXG4gICAgLmZhZGUge1xuICAgICAgICB0cmFuc2l0aW9uLWR1cmF0aW9uOiA1cztcbiAgICAgICAgb3BhY2l0eTogMDtcbiAgICB9XG4gICAgXG4gICAgLypzdmcge1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOnJlZDtcbiAgICB9Ki9cbn1cblxuLnNzQnRuWW91VHViZSB7XG5cblx0YmFja2dyb3VuZDpub25lO1xuXHRib3JkZXI6IG5vbmU7XG5cdFxuXHRtYXJnaW4tcmlnaHQ6IDIwcHggIWltcG9ydGFudDtcbiAgICBwYWRkaW5nLXRvcDogMHB4ICFpbXBvcnRhbnQ7XG4gICAgd2lkdGg6IDI1cHggIWltcG9ydGFudDtcblxuXHQueXRwLWVtYmVkICYge1xuXHRcdHdpZHRoOiAyMHB4ICFpbXBvcnRhbnQ7XG5cdFx0bWFyZ2luLXJpZ2h0OiAxNXB4ICFpbXBvcnRhbnQ7XG5cdH1cbn1cblxuLnNzQnRuVmltZW8ge1xuXG5cdGhlaWdodDogMnJlbSAhaW1wb3J0YW50O1xuICAgIHdpZHRoOiAycmVtICFpbXBvcnRhbnQ7XG4gICAgLy9wYWRkaW5nOiA2cHggIWltcG9ydGFudDtcbiAgICBtYXJnaW4tdG9wOiA4cHggIWltcG9ydGFudDtcblxuXHRidXR0b24ge1xuXG5cdFx0d2lkdGg6IDEwMCUgIWltcG9ydGFudDtcblx0XHRoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcblx0XHRcblx0XHRzdmcge1xuXHRcdFx0d2lkdGg6IDE5cHg7XG5cdFx0fVxuXHR9XG5cbn1cblxuLnNzQnRuTmV0ZmxpeCB7XG5cdGJhY2tncm91bmQ6bm9uZTtcblx0Ym9yZGVyOiBub25lO1xuXHRjdXJzb3I6IHBvaW50ZXI7XG5cblx0d2lkdGg6NHJlbTtcblx0XG5cdG1hcmdpbjogMCAwLjVyZW07XG5cdC8vbWFyZ2luOiAwIDJyZW0gMCA0cmVtO1xuXG5cdGRpc3BsYXk6aW5saW5lLWJsb2NrO1xuXHRmbGV4LXNocmluazogMDtcblx0XG5cdC8vbWFyZ2luLXRvcDotMXJlbTtcblx0Ly9oZWlnaHQ6Mi40cmVtO1xuXHQvL3dpZHRoOiA1MHB4O1xuXHQvL2hlaWdodDogMzVweCAhaW1wb3J0YW50O1xuXHQvL3dpZHRoOiAxMDAlOy8vMy42ZW0gIWltcG9ydGFudDtcbiAgICAvL2hlaWdodDogMTAwJTsvLzEuNmVtICFpbXBvcnRhbnQ7XG5cdC8vcGFkZGluZzowIDAgLjZlbSAwO1xuXG5cdCYgPiBzdmcge1xuXHRcdC8vbWFyZ2luLXRvcDotLjNyZW07XG5cdFx0dHJhbnNmb3JtOnRyYW5zbGF0ZVkoLS4zcmVtKTtcblx0XHQvL3RyYW5zZm9ybTogc2NhbGUoLjUpO1xuXHR9XG4gICAgXG4gICAgJjpob3ZlciB7XG4gICAgICAgIHRyYW5zZm9ybTpzY2FsZSgxLjIpO1xuXHQgICAgdHJhbnNpdGlvbi1kdXJhdGlvbjogLjI1cztcbiAgICB9XG59XG5cbi5zc0J0bkh1bHUge1xuXHRcblx0d2lkdGg6IDI3cHg7XG5cdG1hcmdpbi10b3A6IDRweDtcblx0bWFyZ2luLXJpZ2h0OjEwcHg7XG5cdG9wYWNpdHk6IC43O1xuXHRjdXJzb3I6IHBvaW50ZXI7XG5cdFxuXHQmOmhvdmVyIHtcblx0XHRvcGFjaXR5OiAxO1xuXHR9XG59XG5cbi5zc0J0bkFtYXpvbiB7XG5cdG1hcmdpbi1yaWdodDogMS41dnc7XG4gICAgXG5cdG91dGxpbmU6IG5vbmU7XG5cdFxuICAgY3Vyc29yOiBwb2ludGVyO1xuICAgb3BhY2l0eTogLjg7XG5cbiAgIC8vei1pbmRleDogOTk5OTk5OTk5OTtcblxuICAgICY6aG92ZXIge1xuICAgICAgICBvcGFjaXR5OiAxO1xuICAgIH1cbn1cblxuQG1lZGlhIChtaW4td2lkdGg6IDEyMDBweCkgeyAuc3NCdG5BbWF6b24geyB3aWR0aDogMS42NjY2NjY2NjY2NjY2NjY1dnc7IGhlaWdodDogMS42NjY2NjY2NjY2NjY2NjY1dnc7IH0gfVxuQG1lZGlhIChtYXgtd2lkdGg6IDExOTlweCkgeyAuc3NCdG5BbWF6b24geyB3aWR0aDogMjBweDsgaGVpZ2h0OiAyMHB4OyB9IH1cblxuXG4uc3NCdG5IQk8ge1xuXG4gICAgd2lkdGg6IDQ4cHg7XG4gICAgaGVpZ2h0OiA0OHB4O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBvcGFjaXR5OiAwLjc7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcblxuXHQmOmhvdmVyIHtcblx0XHRvcGFjaXR5OiAxO1xuXHRcdHRyYW5zZm9ybTogc2NhbGUoMS4yKTtcblx0fVxuXG5cdHN2ZyB7XG5cdFx0d2lkdGg6IDI0cHg7XG5cdFx0aGVpZ2h0OiAyNHB4O1xuXHR9XG59XG5cbi5zc0J0bkRpc25leSB7XG5cdC8vd2lkdGg6IDI2cHg7XG4gICAgLy9tYXJnaW4tcmlnaHQ6IDEzcHg7XG4gICAgb3BhY2l0eTogLjc7XG5cblx0Jjpob3ZlciB7XG5cdFx0b3BhY2l0eTogMTtcblx0fVxuXG5cdHN2ZyB7XG5cdFx0d2lkdGg6IDI1cHggIWltcG9ydGFudDtcblx0XHRoZWlnaHQ6IDMxcHggIWltcG9ydGFudDtcblx0XHRwYWRkaW5nLXRvcDogNHB4O1xuXHRcdG1hcmdpbi1yaWdodDogN3B4O1xuXHR9XG59XG5cbi5zc0J0bkFwcGxlIHtcblx0Ly93aWR0aDogMjZweDtcbiAgICAvL21hcmdpbi1yaWdodDogMTNweDtcblxuXHRjdXJzb3I6IHBvaW50ZXI7XG5cblxuICAgIG9wYWNpdHk6IC43O1xuXG5cdCY6aG92ZXIge1xuXHRcdG9wYWNpdHk6IDE7XG5cdH1cblxuXHRzdmcge1xuXHRcdHdpZHRoOiAyMnB4ICFpbXBvcnRhbnQ7XG5cdFx0aGVpZ2h0OiAyMnB4ICFpbXBvcnRhbnQ7XG5cdFx0bWFyZ2luLXJpZ2h0OiAycHggIWltcG9ydGFudDtcblx0fVxufSIsIkBpbXBvcnQgXCJTY3JlZW5zaG90Q29udHJvbC9idXR0b25zXCI7XG5cbmJvZHkge1xuXG5cdCNzc1RlbXBIb2xkZXIge1xuXHRcdHBvc2l0aW9uOmZpeGVkO1xuXHRcdHotaW5kZXg6MTAwMDAwMDAwMDAwMDtcblx0XHR3aWR0aDoxMDAlO1xuXHRcdGhlaWdodDoxMDAlO1xuXHRcdHRvcDowO1xuXHRcdHBvaW50ZXItZXZlbnRzOiBub25lO1xuXG5cdFx0dmlkZW8ge1xuXHRcdFx0d2lkdGg6YXV0byAhaW1wb3J0YW50O1xuXHRcdFx0aGVpZ2h0OmF1dG8gIWltcG9ydGFudDtcblx0XHRcdG1heC13aWR0aDoxMDAlICFpbXBvcnRhbnQ7XG5cdFx0XHRtYXgtaGVpZ2h0OiAxMDAlICFpbXBvcnRhbnQ7XG5cdFx0XHR0b3A6IDAgIWltcG9ydGFudDtcblx0XHRcdGxlZnQ6IDAgIWltcG9ydGFudDtcblx0XHRcdHRyYW5zZm9ybTogbm9uZSAhaW1wb3J0YW50O1xuXHRcdH1cblx0fVxuXG5cdCYuc3NUYWtlU2NyZWVuc2hvdCB7XG5cdFx0XG5cdFx0LnNzRWxlbWVudCB7XG5cdFx0XHR6LWluZGV4OiAxMDAwMDAwMDAwMDAgIWltcG9ydGFudDtcblx0XHR9XG5cdFx0XG5cdFx0Ji5zc05ldGZsaXgge1xuXHRcblx0XHRcdFtkYXRhLXVpYT12aWRlby1jYW52YXNdIHtcblx0XHRcdFx0ei1pbmRleDogMTAwMDAwMDA7XG5cdFx0XHR9XG5cdFx0XHRcblx0XHRcdHZpZGVvIHtcblx0XHRcdFx0YmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcblx0XHRcdFx0Ly9oZWlnaHQ6IGF1dG8gIWltcG9ydGFudDtcblx0XHRcdH1cblxuXHRcdFx0LnBsYXllci10aW1lZHRleHQge1xuXG5cdFx0XHRcdGRpc3BsYXk6bm9uZSAhaW1wb3J0YW50O1xuXHRcdFx0fVx0XHRcdFxuXG5cdFx0XHQmLnNob3dTdWJzIHtcblx0XHRcdFx0XG5cdFx0XHRcdC5wbGF5ZXItdGltZWR0ZXh0IHtcblxuXHRcdFx0XHRcdGRpc3BsYXk6IGJsb2NrICFpbXBvcnRhbnQ7XG5cdFx0XHRcdFx0Ly9ib3R0b206IDEwJSAhaW1wb3J0YW50O1xuXHRcdFx0XHR9XG5cdFx0XHR9XG5cdFx0fVxuXG5cdFx0Ji5zc0FtYXpvbiB7XG5cblx0XHRcdC5zY2FsaW5nVmlkZW9Db250YWluZXIge1xuXHRcdFx0XHR6LWluZGV4OiA5OTk5OTk5OSAhaW1wb3J0YW50O1xuXHRcdFx0fVxuXHRcdH1cblxuXHRcdCYuc3NEaXNuZXkge1xuXG5cdFx0XHQuYnRtLW1lZGlhLW92ZXJsYXlzLWNvbnRhaW5lciB7XG5cdFx0XHRcdGRpc3BsYXk6bm9uZTtcblx0XHRcdH1cblxuXHRcdFx0LmRzcy1obHMtc3VidGl0bGUtb3ZlcmxheSB7XG5cdFx0XHRcdGRpc3BsYXk6IG5vbmU7XG5cdFx0XHR9XG5cblx0XHRcdCYuc2hvd1N1YnMge1xuXHRcdFx0XHRcblx0XHRcdFx0LmRzcy1obHMtc3VidGl0bGUtb3ZlcmxheSB7XG5cdFx0XHRcdFx0ZGlzcGxheTogYmxvY2s7XG5cdFx0XHRcdH1cblx0XHRcdH1cblx0XHR9XG5cblx0XHQmLnNzSHVsdSB7XG5cdFx0XHQuQ29udGVudFBsYXllcl9fY29udGVudEFyZWEge1xuXHRcdFx0XHR6LWluZGV4OiAxMDAwMDAwMDAwMDtcbiAgICBcdFx0XHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cdFx0XHR9XG5cblx0XHRcdC5DbG9zZWRDYXB0aW9uIHtcblx0XHRcdFx0ZGlzcGxheTpub25lO1xuXHRcdFx0fVxuXG5cdFx0XHQmLnNob3dTdWJzIHtcblx0XHRcdFx0LkNsb3NlZENhcHRpb24ge1xuXHRcdFx0XHRcdGRpc3BsYXk6YmxvY2s7XG5cblx0XHRcdFx0XHQuQ2xvc2VkQ2FwdGlvbl9fb3V0YmFuZCB7XG5cdFx0XHRcdFx0XHRib3R0b206IDMwcHggIWltcG9ydGFudDtcblx0XHRcdFx0XHR9XG5cdFx0XHRcdH1cblx0XHRcdH1cblx0XHR9XG5cblx0XHQmLnNzSEJPIHtcblxuXHRcdFx0dmlkZW8ge1xuXHRcdFx0XHR6LWluZGV4OiA5OTk5OTk5OTtcblx0XHRcdH1cblxuXHRcdFx0KjpoYXModmlkZW8pIHtcblx0XHRcdFx0ei1pbmRleDogOTk5OTk5OTk7XG5cdFx0XHR9XG5cblx0XHR9XG5cblx0XHQmLnNzWW91dHViZSB7XG5cblx0XHRcdC5odG1sNS12aWRlby1jb250YWluZXIsIC55dHAtY2FwdGlvbi13aW5kb3ctY29udGFpbmVyIHtcblx0XHRcdFx0ei1pbmRleDogOTk5OTk5OTk5ICFpbXBvcnRhbnQ7XG5cdFx0XHR9XG5cdFx0fVxuXG5cdFx0Ji5zc0FwcGxlIHtcblx0XHRcdCNhcHBsZS1tdXNpYy12aWRlby1wbGF5ZXIge1xuXHRcdFx0XHR6LWluZGV4OiA5OTk5OTk5OTkgIWltcG9ydGFudDtcblx0XHRcdH1cblxuXHRcdFx0LnNjcmltIHtcblx0XHRcdFx0ZGlzcGxheTpub25lO1xuXHRcdFx0fVxuXHRcdH1cblx0fVxuXG5cdC5zc1dyYXBwZXIge1xuXHRcdG92ZXJmbG93OiBoaWRkZW47XG5cdH1cblxuXHRAaW1wb3J0IFwiU2NyZWVuc2hvdENvbnRyb2wvbm90aWZpY2F0aW9uc1wiO1xuXHRAaW1wb3J0IFwiU2NyZWVuc2hvdENvbnRyb2wvbW9kYWxcIjtcbn0iLCIuc3NOb3RpZmljYXRpb24ge1xuXG4gICAgZGlzcGxheTogZmxleDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDRyZW07XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgei1pbmRleDogMTAwMDAwMDAwMDtcbiAgICB0b3A6LTRyZW07XG5cbiAgICBhbmltYXRpb24tbmFtZTogbm90aWZpY2F0aW9uO1xuICAgIGFuaW1hdGlvbi1kdXJhdGlvbjogMnM7XG4gICAgYW5pbWF0aW9uLWl0ZXJhdGlvbi1jb3VudDogMTtcblxuICAgIEBrZXlmcmFtZXMgbm90aWZpY2F0aW9uIHtcbiAgICAgICAgMCUge3RvcDogLTRyZW07fVxuICAgICAgICAyNSUge3RvcDogM3JlbTt9XG4gICAgICAgIDg1JSB7dG9wOiAzcmVtO31cbiAgICB9XG5cbiAgICAuc3NOQ29udGVudCB7XG4gICAgICAgIC8vY29udGVudDogJ1NjcmVlbnNob3QgY29waWVkIHRvIGNsaXBib2FyZCEnO1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIHotaW5kZXg6IDEwMDAwMDAwMDA7XG4gICAgICAgIHBhZGRpbmc6IC43NXJlbSAxLjI1ZW07XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDFlbTtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IC4yNWVtO1xuICAgICAgICBmb250LXNpemU6IDEycHg7XG4gICAgICAgIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gICAgICAgIHRvcDowO1xuXG4gICAgICAgICYuc3VjY2VzcyB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZDRlZGRhO1xuICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiAjYzNlNmNiO1xuICAgICAgICAgICAgY29sb3I6ICMxNTU3MjQ7XG4gICAgICAgIH1cbiAgICBcbiAgICAgICAgJi5mYWlsIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNlZGQ0ZDQ7XG4gICAgICAgICAgICBib3JkZXItY29sb3I6ICNlNmMzYzM7XG4gICAgICAgICAgICBjb2xvcjogI2I2MjQyNDtcbiAgICAgICAgfVxuICAgIH1cblxufSIsIi5zc01vZGFsIHtcblxuICAgIGRpc3BsYXk6IG5vbmU7XG5cbiAgICAmLnZpc2libGUge1xuICAgICAgICBkaXNwbGF5OmJsb2NrO1xuICAgIH1cblxuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB6LWluZGV4OiAxMDAwMDAwMDA7XG5cbiAgICByaWdodDoyMHB4O1xuICAgIFxuICAgIG9wYWNpdHk6IDA7XG5cbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNmZmZlZmE7XG4gICAgYm9yZGVyLXJhZGl1czogM3B4O1xuXG4gICAgcGFkZGluZzogMjVweDtcblxuICAgIGNvbG9yOiAjNTI1MjUyO1xuICAgIGZvbnQtZmFtaWx5OiBtdWxpLCBzYW5zLXNlcmlmO1xuICAgIFxuICAgICoge1xuICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xuICAgICAgICBsaW5lLWhlaWdodDogbm9ybWFsO1xuICAgICAgICBmb250LXdlaWdodDogbm9ybWFsO1xuICAgIH1cblxuICAgIGJveC1zaGFkb3c6IDBweCA0cHggOHB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMTUpO1xuXG4gICAgYW5pbWF0aW9uLW5hbWU6IGFuaW1hdGVPbjtcbiAgICBhbmltYXRpb24tZHVyYXRpb246IC4ycztcbiAgICBhbmltYXRpb24tZmlsbC1tb2RlOiBmb3J3YXJkcztcblxuICAgIEBrZXlmcmFtZXMgYW5pbWF0ZU9uIHtcbiAgICAgICAgZnJvbSB7XG4gICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgdG9wOiAwcHg7XG4gICAgICAgIH1cbiAgICAgICAgdG8ge1xuICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICAgIHRvcDogMjBweDtcbiAgICAgICAgfVxuICAgIH1cblxuICAgIC5jbG9zZSB7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgcmlnaHQ6IDEwcHg7XG4gICAgICAgIHRvcDogMTBweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBvcGFjaXR5OiAuNTtcblxuICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL2ltYWdlcy9jbG9zZS5zdmcnKTtcblxuICAgICAgICB3aWR0aDoxMHB4O1xuICAgICAgICBoZWlnaHQ6MTBweDtcblxuICAgIH1cblxuICAgIC5zc0J1dHRvbnMge1xuXG4gICAgICAgIG1hcmdpbi10b3A6IDI1cHg7XG4gICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuXG4gICAgICAgIC5zc0J1dHRvbiwgYSAuc3NCdXR0b24ge1xuICAgICAgICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7XG5cbiAgICAgICAgICAgIGhlaWdodDoyMHB4O1xuICAgICAgICAgICAgXG4gICAgICAgICAgICBwYWRkaW5nOjNweCAxMnB4IDNweDtcbiAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAxNHB4O1xuICAgICAgICAgICAgXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgICAgICBib3gtc2hhZG93OiAwcHggNHB4IDhweCAwcHggcmdiYSgwLCAwLCAwLCAwLjE1KTtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkZGRkY7XG4gICAgICAgICAgICBcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICAgICAgICAgIGNvbG9yOiAjNTI1MjUyO1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gICAgICAgICAgICBmb250LXdlaWdodDogbm9ybWFsO1xuICAgIFxuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuXG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG5cbiAgICAgICAgICAgIC5lbW9qaSB7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xuICAgICAgICAgICAgICAgIHZlcnRpY2FsLWFsaWduOiBib3R0b207XG4gICAgICAgICAgICB9XG4gICAgXG4gICAgICAgICAgICAmLmJsdWUge1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxOWFjZWY7XG4gICAgICAgICAgICAgICAgY29sb3I6ICNGRkZGRkY7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAuaWNvbiB7XG4gICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi4vaW1hZ2VzL2ljb25CbHVlLnN2ZycpO1xuICAgICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuXG4gICAgICAgIHdpZHRoOjMwcHg7XG4gICAgICAgIGhlaWdodDozMHB4O1xuXG4gICAgICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XG4gICAgICAgIG1hcmdpbi1yaWdodDogMjJweDtcbiAgICAgICAgbWFyZ2luLXRvcDoycHg7XG5cbiAgICAgICAgZGlzcGxheTppbmxpbmUtYmxvY2s7XG4gICAgfVxuXG4gICAgLmJvZHkge1xuXG4gICAgICAgIGRpc3BsYXk6aW5saW5lLWJsb2NrO1xuICAgICAgICB3aWR0aDozMTVweDtcblxuICAgICAgICAudGl0bGUge1xuICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDdweDtcbiAgICAgICAgfVxuICAgICAgICAuZGVzY3JpcHRpb24ge1xuICAgICAgICAgICAgZm9udC1zaXplOiAxM3B4O1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XG4gICAgICAgIH1cbiAgICB9XG5cbn0iXSwic291cmNlUm9vdCI6IiJ9 */
+  </style>
+ </head>
+ <body>
+  <div dir="ltr">
+   <div class="gmail_quote">
+    <div class="gmail_attr" dir="ltr">
+    </div>
+    <div style="min-width:100%;padding:0;box-sizing:border-box;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:100%" width="100%">
+     <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden">
+      Your order RBEFHU will be delivered by DHL Express on 22/10/2023.
+     </div>
+     <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden">
+      <div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+       <div>
+       </div>
+      </div>
+     </div>
+     <table align="left" border="0" cellpadding="0" cellspacing="0" height="100%" style="border-spacing:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;height:100%;width:100%;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top" width="100%">
+      <tbody>
+       <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+        <td align="center" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;float:none;text-align:center;border-collapse:collapse" valign="top">
+         <center style="width:100%;min-width:576px">
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;margin:0 auto;Margin:0 auto;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:35px;padding-bottom:35px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" height="150" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;height:150px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <center style="width:100%;min-width:none">
+                               <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly93d3cuZmFyZmV0Y2guY29tL2dyLz91dG1fc291cmNlPXBhcmNlbGxhYiZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1PdXRGb3JEZWxpdmVyeSZ1dG1fY29udGVudD1oZWFkZXImdXRtX3Rlcm09YW55In0%3D&amp;fb=https%3A%2F%2Fwww.farfetch.com%2Fgr%2F%3Futm_source%3Dparcellab%26utm_medium%3Demail%26utm_campaign%3DOutForDelivery%26utm_content%3Dheader%26utm_term%3Dany" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;color:#222222;text-decoration:underline" target="_blank">
+                                <img align="center" alt="farfetch logo" height="80" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/farfetch_logo_global_default@4x.png" style="outline:none;text-decoration:none;width:auto;max-width:100%;clear:both;display:block;border:none;margin:0 auto;Margin:0 auto;float:none;text-align:center" width="286"/>
+                                <div style="display:none">
+                                 <img align="center" alt="farfetch logo" height="80" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/farfetch_logo_global_dark@4x.png" style="outline:none;text-decoration:none;width:auto;max-width:100%;clear:both;border:none;margin:0 auto;Margin:0 auto;float:none;text-align:center;display:none" width="286"/>
+                                </div>
+                                <div style="display:none">
+                                 <img align="center" alt="farfetch logo" height="80" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/farfetch_logo_global_light@4x.png" style="outline:none;text-decoration:none;width:auto;max-width:100%;clear:both;border:none;margin:0 auto;Margin:0 auto;float:none;text-align:center;display:none" width="286"/>
+                                </div>
+                               </a>
+                              </center>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;padding-top:48px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <h1 style="margin:0;Margin:0;font-family:'NimbusSansExtD-Bold','Helvetica Neue Bold','Arial Bold',sans-serif;font-weight:700;font-size:26px;line-height:26px;text-transform:uppercase;text-align:center">
+                               YOUR ORDER'S ON ITS WAY
+                              </h1>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;padding-top:24px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0;Margin:0;text-align:center">
+                               Order number:
+                                                UBEZER
+                              </p>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;padding-top:12px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0;Margin:0;text-align:center">
+                               <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly93d3cuZmFyZmV0Y2guY29tL2dyL2xvZ2luLmFzcHg%2FcnU9JTJGdXNlcmFjY291bnQuYXNweCUzRiUyNnV0bV9zb3VyY2UlM0RwYXJjZWxsYWIlMjZ1dG1fbWVkaXVtJTNEZW1haWwlMjZ1dG1fY2FtcGFpZ24lM0RPdXRGb3JEZWxpdmVyeSUyNnV0bV9jb250ZW50JTNEaGVhZGVyJTI2JnV0bV9zb3VyY2U9cGFyY2VsbGFiJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NvbnRlbnQ9YW55JnV0bV9jYW1wYWlnbj1PdXRGb3JEZWxpdmVyeSZ1dG1fdGVybT1hbnkifQ%3D%3D&amp;fb=https%3A%2F%2Fwww.farfetch.com%2Fgr%2Flogin.aspx%3Fru%3D%252Fuseraccount.aspx%253F%2526utm_source%253Dparcellab%2526utm_medium%253Demail%2526utm_campaign%253DOutForDelivery%2526utm_content%253Dheader%2526%26utm_source%3Dparcellab%26utm_medium%3Demail%26utm_content%3Dany%26utm_campaign%3DOutForDelivery%26utm_term%3Dany" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;color:#222222;text-decoration:underline" target="_blank">
+                                View account
+                               </a>
+                              </p>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;margin:0 auto;Margin:0 auto;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:48px;padding-bottom:24px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <p style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px">
+                       Hi {firstname},
+                      </p>
+                      <br/>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;margin-top:8px;Margin-top:8px;margin-bottom:8px;Margin-bottom:8px">
+                       Your order
+                       <b>
+                        UBEZER
+                       </b>
+                       will be delivered by DHL Express on
+                       <b>
+                        {deliverydate}
+                       </b>
+                       . Click the link below to track its journey.
+                      </p>
+                      <table style="margin-top:6px;margin-bottom:14px" width="100%">
+                       <tbody>
+                        <tr>
+                         <td>
+                          <table border="0" cellpadding="0" cellspacing="0">
+                           <tbody>
+                            <tr>
+                             <td height="10" style="font-size:10px;line-height:10px" width="100%">
+                             </td>
+                            </tr>
+                           </tbody>
+                          </table>
+                          <table align="left" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto">
+                           <tbody>
+                            <tr>
+                             <td align="left">
+                              <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto">
+                               <tbody>
+                                <tr>
+                                 <td align="left" bgcolor="#222" style="border-radius:4px;background-color:#222" width="260">
+                                  <a color="#FFFFFF" href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly9mYXJmZXRjaC5kZWxpdmVyeS1zdGF0dXMuY29tLz9sb2NhbGU9Z3ItZW4mb3JkZXJObz1VWEpUWFUmbGFuZz1lbiZzaG93X2FydGljbGVMaXN0PXllcyZ1c2VySWQ9MTYxMzAxOSZzPUIyc1JzT3psczcmb3htX2VtPXBhcmNlbExhYiJ9&amp;fb=https%3A%2F%2Ffarfetch.delivery-status.com%2F%3Flocale%3Dgr-en%26orderNo%3DUXJTXU%26lang%3Den%26show_articleList%3Dyes%26userId%3D1613019%26s%3DB2sRsOzls7%26oxm_em%3DparcelLab" style="padding:10px;width:260px;display:block;text-decoration:none;border:0;text-align:center;font-weight:normal;font-size:14px;font-family:sans-serif;color:#ffffff!important;background:#222;border:1px solid #222;border-radius:4px;line-height:17px" target="_blank">
+                                   <font color="#FFFFFF">
+                                    Track Your Order
+                                   </font>
+                                  </a>
+                                 </td>
+                                </tr>
+                                <tr>
+                                 <td height="10" style="font-size:10px;line-height:10px" width="100%">
+                                 </td>
+                                </tr>
+                               </tbody>
+                              </table>
+                             </td>
+                            </tr>
+                           </tbody>
+                          </table>
+                          <table border="0" cellpadding="0" cellspacing="0">
+                           <tbody>
+                            <tr>
+                             <td height="10" style="font-size:10px;line-height:10px" width="100%">
+                             </td>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </td>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;margin-top:8px;Margin-top:8px;margin-bottom:8px;Margin-bottom:8px">
+                       Here’s what will arrive:
+                      </p>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px">
+                       Expected Delivery Date:
+                       <b>
+                        {deliverydate}
+                       </b>
+                      </p>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px">
+                       <img height="auto" src="{imageurl}" style="border:0;outline:none;text-decoration:none;height:auto;width:60px!important" width="60"/>
+                      </p>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin-bottom:0">
+                       If you're not going to be in to receive your order you can rearrange your delivery below*:
+                      </p>
+                      <p style="font-family:'Polaris-Book',Helvetica,Arial,sans-serif;color:#222222;line-height:20px;font-size:13px;margin-top:0">
+                      </p>
+                      <table style="margin-top:6px;margin-bottom:14px" width="100%">
+                       <tbody>
+                        <tr>
+                         <td>
+                          <table border="0" cellpadding="0" cellspacing="0">
+                           <tbody>
+                            <tr>
+                             <td height="10" style="font-size:10px;line-height:10px" width="100%">
+                             </td>
+                            </tr>
+                           </tbody>
+                          </table>
+                          <table align="left" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto">
+                           <tbody>
+                            <tr>
+                             <td align="left">
+                              <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto">
+                               <tbody>
+                                <tr>
+                                 <td align="left" bgcolor="#fff" style="border-radius:4px;background-color:#fff" width="260">
+                                  <a color="#FFFFFF" href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly9kZWxpdmVyeS5kaGwuY29tL3ByZy93YXliaWxsLnhodG1sP2N0cnljb2RlPUdSIn0%3D&amp;fb=https%3A%2F%2Fdelivery.dhl.com%2Fprg%2Fwaybill.xhtml%3Fctrycode%3DGR" style="padding:10px;width:260px;display:block;text-decoration:none;border:0;text-align:center;font-weight:normal;font-size:14px;font-family:sans-serif;color:#ffffff!important;background:#fff;border:1px solid #dedede;border-radius:4px;line-height:17px" target="_blank">
+                                   <font color="#222" style="font-weight:bold">
+                                    Rearrange Your Delivery
+                                   </font>
+                                  </a>
+                                 </td>
+                                </tr>
+                                <tr>
+                                 <td height="10" style="font-size:10px;line-height:10px" width="100%">
+                                 </td>
+                                </tr>
+                               </tbody>
+                              </table>
+                             </td>
+                            </tr>
+                           </tbody>
+                          </table>
+                          <table border="0" cellpadding="0" cellspacing="0">
+                           <tbody>
+                            <tr>
+                             <td height="10" style="font-size:10px;line-height:10px" width="100%">
+                             </td>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </td>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <p>
+                      </p>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;margin-top:8px;Margin-top:8px;margin-bottom:8px;Margin-bottom:8px">
+                       Thanks again for shopping with us.
+                      </p>
+                      <br/>
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                       FARFETCH
+                      </p>
+                     </th>
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;margin:0 auto;Margin:0 auto;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:48px;padding-bottom:24px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <h3 style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:19px;line-height:26px;Margin-bottom:24px;margin-bottom:24px">
+                       Your delivery information
+                      </h3>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;padding-right:8px;width:50%;border-collapse:collapse;padding-left:0" valign="top" width="50%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                               {name}
+                               <br/>
+                               {street}
+                               <br/>
+                               {cityzip}
+                               <br/>
+                               {country}
+                              </p>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;margin:0 auto;Margin:0 auto;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:48px;padding-bottom:24px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <h3 style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:19px;line-height:26px">
+                               Your order summary
+                              </h3>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <hr style="border:none;height:1px;color:#ccc;background-color:#ccc;margin-top:22px;margin-bottom:20px"/>
+                              <p style="margin-bottom:6px!important;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                               Expected Delivery Date:
+                               <b>
+                                {deliverydate}
+                               </b>
+                              </p>
+                              <p style="margin-top:0!important;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                               Sending From
+                               <b>
+                                MEDITERRANEO
+                               </b>
+                              </p>
+                              <p style="margin-bottom:6px!important;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                               Order Status
+                               <b>
+                                Sent
+                               </b>
+                              </p>
+                              <p style="margin-top:0!important">
+                               <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly9kZWxpdmVyeS5kaGwuY29tL3ByZy93YXliaWxsLnhodG1sP2N0cnljb2RlPUdSIn0%3D&amp;fb=https%3A%2F%2Fdelivery.dhl.com%2Fprg%2Fwaybill.xhtml%3Fctrycode%3DGR" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:12px;line-height:18px;margin:0;Margin:0;color:rgb(34,34,34);text-decoration:underline" target="_blank">
+                                Rearrange delivery*
+                               </a>
+                              </p>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-right:8px;width:25%;border-collapse:collapse;padding-top:24px;padding-bottom:24px;padding-left:0" valign="top" width="25%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <a style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;color:#222222;text-decoration:underline">
+                               <img height="110" src="{imageurl}" style="outline:none;text-decoration:none;width:auto;max-width:100%;clear:both;display:block;border:none;margin:0 auto;Margin:0 auto;float:none;text-align:center" width="92"/>
+                              </a>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                         <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-left:8px;width:75%;border-collapse:collapse;padding-top:24px;padding-bottom:24px;padding-right:0" valign="top" width="75%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                               <tbody>
+                                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;padding-top:12px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                                   <tbody>
+                                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                                      <p style="font-size:16px;line-height:22px;margin:0;Margin:0;font-family:'FarfetchBasis-Bold','Helvetica Neue',Arial,sans-serif;font-weight:700;text-align:left">
+                                       {brandname}
+                                      </p>
+                                     </th>
+                                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                                     </th>
+                                    </tr>
+                                   </tbody>
+                                  </table>
+                                 </th>
+                                </tr>
+                               </tbody>
+                              </table>
+                              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                               <tbody>
+                                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                 <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;padding-right:8px;width:66.66667%;border-collapse:collapse;padding-left:0" valign="top" width="66.66667%">
+                                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                                   <tbody>
+                                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                                       {productname}
+                                      </p>
+                                     </th>
+                                    </tr>
+                                   </tbody>
+                                  </table>
+                                 </th>
+                                 <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;padding-left:8px;width:33.33333%;border-collapse:collapse;padding-right:0" valign="top" width="33.33333%">
+                                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                                   <tbody>
+                                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0;Margin:0;text-align:right">
+                                       {currency}{total}.00
+                                      </p>
+                                     </th>
+                                    </tr>
+                                   </tbody>
+                                  </table>
+                                 </th>
+                                </tr>
+                               </tbody>
+                              </table>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <hr style="border:0;padding:0;margin:0;Margin:0;border-top:1px solid #727272;color:#727272;background:#727272"/>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;margin:0 auto;Margin:0 auto;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:24px;padding-bottom:24px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px">
+                       *Excited to get your FARFETCH order? We recommend you're at your selected address at the time of delivery. If you choose an alternative delivery method through our courier, 
+    like leaving your package in a safe place, we won't be able to help if your package is lost or damaged.
+                       <br/>
+                       <br/>
+                       If you have an account with our courier, check your delivery preferences, as these are applied to your FARFETCH deliveries. For more information, visit our
+                       <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly93d3cuZmFyZmV0Y2guY29tL3Rlcm1zLWFuZC1jb25kaXRpb25zLz91dG1fc291cmNlPXBhcmNlbGxhYiZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1PdXRGb3JEZWxpdmVyeSZ1dG1fY29udGVudD1mb290ZXImdXRtX3Rlcm09YW55In0%3D&amp;fb=https%3A%2F%2Fwww.farfetch.com%2Fterms-and-conditions%2F%3Futm_source%3Dparcellab%26utm_medium%3Demail%26utm_campaign%3DOutForDelivery%26utm_content%3Dfooter%26utm_term%3Dany" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;color:#222222;text-decoration:underline" target="_blank">
+                        Terms &amp; Conditions
+                       </a>
+                       .
+                      </p>
+                      <hr style="border:0;padding:0;margin:0;Margin:0;border-top:1px solid #727272;color:#727272;background:#727272;Margin-top:24px;margin-top:24px"/>
+                     </th>
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:24px;padding-bottom:24px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;padding-bottom:6px;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <img alt="Positively Farfetch environment leaf icon" border="0" height="20" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconClimateConciousLight@4x.png" style="outline:none;text-decoration:none;width:auto;max-width:100%;clear:both;display:block;float:left;text-align:left;Margin-right:6px;margin-right:6px" width="20"/>
+                              <span style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;display:none">
+                               <img alt="Delivery truck icon" border="0" height="20" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconClimateConciousDark@4x.png" style="outline:none;text-decoration:none;width:auto;max-width:100%;clear:both;display:block;float:left;text-align:left;Margin-right:6px;margin-right:6px" width="20"/>
+                              </span>
+                              <p style="margin:0;Margin:0;font-size:16px;line-height:22px;font-family:'FarfetchBasis-Bold','Helvetica Neue',Arial,sans-serif;font-weight:700;text-align:left">
+                               Positively FARFETCH
+                              </p>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <p style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0">
+                               We're on a mission to become the global platform for good in luxury fashion – empowering everyone to choose, act and think positively.
+                               <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly93d3cuZmFyZmV0Y2guY29tL3VrL3N0b3JpZXMvcG9zaXRpdmVseS1mYXJmZXRjaC5hc3B4P3V0bV9zb3VyY2U9cGFyY2VsbGFiJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPU91dEZvckRlbGl2ZXJ5JnV0bV9jb250ZW50PWZvb3RlciZ1dG1fdGVybT1hbnkifQ%3D%3D&amp;fb=https%3A%2F%2Fwww.farfetch.com%2Fuk%2Fstories%2Fpositively-farfetch.aspx%3Futm_source%3Dparcellab%26utm_medium%3Demail%26utm_campaign%3DOutForDelivery%26utm_content%3Dfooter%26utm_term%3Dany" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;color:#222222;text-decoration:underline" target="_blank">
+                                Discover more about Positively FARFETCH
+                               </a>
+                               .
+                              </p>
+                              <hr style="border:0;padding:0;margin:0;Margin:0;border-top:1px solid #727272;color:#727272;background:#727272;Margin-top:24px;margin-top:24px"/>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <table align="center" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;width:576px;float:none;text-align:center" valign="top" width="576">
+           <tbody>
+            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+             <td align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+               <tbody>
+                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                 <th align="left" style="word-wrap:break-word;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;width:560px;padding-left:16px;padding-right:16px;border-collapse:collapse;padding-top:48px;padding-bottom:48px" valign="top" width="560">
+                  <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                   <tbody>
+                    <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                     <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;width:100%;border-collapse:collapse;padding-left:0;padding-right:0" valign="top" width="100%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <h2 style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:24px;line-height:30px;Margin-bottom:12px;margin-bottom:12px;text-align:center">
+                               Need help?
+                              </h2>
+                              <p style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:14px;line-height:18px;Margin-bottom:48px;margin-bottom:48px;text-align:center">
+                               Contact our global Customer Service team. Remember we’ll need your order number.
+                              </p>
+                             </th>
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;width:0;border-collapse:collapse;padding:0" valign="top">
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                      <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;padding:0;width:100%;display:table" valign="top" width="100%">
+                       <tbody>
+                        <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;padding-right:8px;width:33.33333%;border-collapse:collapse;padding-left:0" valign="top" width="33.33333%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <center style="width:100%;min-width:none">
+                               <img align="center" alt="email icon" height="24" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconMailLight@4x.png" style="outline:none;text-decoration:none;max-width:100%;clear:both;display:block;margin:0 auto;Margin:0 auto;float:none;text-align:center;width:24px;height:24px" width="24"/>
+                               <span align="center" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0;Margin:0;text-align:center;text-align:-webkit-center;display:none">
+                                <img alt="email icon" height="24" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconMailDark@4x.png" style="outline:none;text-decoration:none;max-width:100%;clear:both;display:block;width:24px;height:24px" width="24"/>
+                               </span>
+                              </center>
+                              <p style="margin:0;Margin:0;font-size:11px;line-height:14px;font-family:'FarfetchBasis-Bold','Helvetica Neue',Arial,sans-serif;font-weight:700;Margin-top:12px;margin-top:12px;Margin-bottom:6px;margin-bottom:6px;text-align:center">
+                               Email us
+                              </p>
+                              <p style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:11px;line-height:14px;text-align:center">
+                               <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly93d3cuZmFyZmV0Y2guY29tL2dyL2NvbnRhY3QtdXMvP3V0bV9zb3VyY2U9cGFyY2VsbGFiJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPU91dEZvckRlbGl2ZXJ5JnV0bV9jb250ZW50PWZvb3RlciZ1dG1fdGVybT1hbnkifQ%3D%3D&amp;fb=https%3A%2F%2Fwww.farfetch.com%2Fgr%2Fcontact-us%2F%3Futm_source%3Dparcellab%26utm_medium%3Demail%26utm_campaign%3DOutForDelivery%26utm_content%3Dfooter%26utm_term%3Dany" style="margin:0;Margin:0;color:#222222;text-decoration:underline;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:11px;line-height:14px" target="_blank">
+                                Send us an email
+                               </a>
+                              </p>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                         <th align="left" dir="ltr" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;padding-left:8px;padding-right:8px;width:33.33333%;border-collapse:collapse" valign="top" width="33.33333%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;display:none;overflow:hidden;max-height:0;font-size:0;line-height:0;width:100%" valign="top" width="100%">
+                               <tbody>
+                                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                 <td align="left" height="24px" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;margin:0;Margin:0;font-size:24px;line-height:24px;border-collapse:collapse" valign="top">
+                                 </td>
+                                </tr>
+                               </tbody>
+                              </table>
+                              <center style="width:100%;min-width:none">
+                               <img align="center" alt="phone icon" height="24" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconPhoneLight@4x.png" style="outline:none;text-decoration:none;max-width:100%;clear:both;display:block;margin:0 auto;Margin:0 auto;float:none;text-align:center;width:24px;height:24px" width="24"/>
+                               <span align="center" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0;Margin:0;text-align:center;text-align:-webkit-center;display:none">
+                                <img alt="phone icon" height="24" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconPhoneDark@4x.png" style="outline:none;text-decoration:none;max-width:100%;clear:both;display:block;width:24px;height:24px" width="24"/>
+                               </span>
+                              </center>
+                              <p style="margin:0;Margin:0;font-size:11px;line-height:14px;font-family:'FarfetchBasis-Bold','Helvetica Neue',Arial,sans-serif;font-weight:700;Margin-top:12px;margin-top:12px;Margin-bottom:6px;margin-bottom:6px;text-align:center">
+                               Call us
+                              </p>
+                              <p style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:11px;line-height:14px;text-align:center">
+                               US
+                               <a href="tel:+16467913768" style="margin:0;Margin:0;color:#222222;text-decoration:underline;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:11px;line-height:14px" target="_blank">
+                                +1 646 791 3768
+                               </a>
+                               <br/>
+                               CA
+                               <a href="tel:+12267804061" style="margin:0;Margin:0;color:#222222;text-decoration:underline;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:11px;line-height:14px" target="_blank">
+                                +1 226 780 4061
+                               </a>
+                               <br/>
+                               AU and NZ
+                               <a href="tel:+61871001758" style="margin:0;Margin:0;color:#222222;text-decoration:underline;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:11px;line-height:14px" target="_blank">
+                                +61871001758
+                               </a>
+                               <br/>
+                               UK and rest of world
+                               <br/>
+                               <a href="tel:+442037501250" style="margin:0;Margin:0;color:#222222;text-decoration:underline;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:11px;line-height:14px" target="_blank">
+                                +44 (0) 20 3750 1250
+                               </a>
+                               <br/>
+                              </p>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                         <th align="left" style="word-wrap:break-word;padding-top:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0 auto;Margin:0 auto;padding-bottom:0;padding-left:8px;width:33.33333%;border-collapse:collapse;padding-right:0" valign="top" width="33.33333%">
+                          <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;width:100%" valign="top" width="100%">
+                           <tbody>
+                            <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                             <th align="left" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:16px;line-height:22px;margin:0;Margin:0;border-collapse:collapse" valign="top">
+                              <table align="left" style="border-spacing:0;border-collapse:collapse;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left;display:none;overflow:hidden;max-height:0;font-size:0;line-height:0;width:100%" valign="top" width="100%">
+                               <tbody>
+                                <tr align="left" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;text-align:left" valign="top">
+                                 <td align="left" height="24px" style="word-wrap:break-word;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;vertical-align:top;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;margin:0;Margin:0;font-size:24px;line-height:24px;border-collapse:collapse" valign="top">
+                                 </td>
+                                </tr>
+                               </tbody>
+                              </table>
+                              <center style="width:100%;min-width:none">
+                               <img align="center" alt="faq icon" height="24" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconQuestionMarkCircleLight@4x.png" style="outline:none;text-decoration:none;max-width:100%;clear:both;display:block;margin:0 auto;Margin:0 auto;float:none;text-align:center;width:24px;height:24px" width="24"/>
+                               <span align="center" style="font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:22px;margin:0;Margin:0;text-align:center;text-align:-webkit-center;display:none">
+                                <img alt="faq icon" height="24" src="https://parcel-cdn.delivery-status.com/img/mail/farfetch_8wDK3np3hILMC72W/IconQuestionMarkCircleDark@4x.png" style="outline:none;text-decoration:none;max-width:100%;clear:both;display:block;width:24px;height:24px" width="24"/>
+                               </span>
+                              </center>
+                              <p style="margin:0;Margin:0;font-size:11px;line-height:14px;font-family:'FarfetchBasis-Bold','Helvetica Neue',Arial,sans-serif;font-weight:700;Margin-top:12px;margin-top:12px;Margin-bottom:6px;margin-bottom:6px;text-align:center">
+                               FAQs
+                              </p>
+                              <p style="margin:0;Margin:0;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:11px;line-height:14px;text-align:center">
+                               Find the answers you
+                               <br/>
+                               need in our
+                               <a href="https://parcel-api.delivery-status.com/click/6490896197e7192fb2a0416c/forward?to=eyJlbWFpbElkIjoiNjQ5MDg5NjE5N2U3MTkyZmIyYTA0MTZjIiwidXJsIjoiaHR0cHM6Ly93d3cuZmFyZmV0Y2guY29tL2ZhcXMvP3V0bV9zb3VyY2U9cGFyY2VsbGFiJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPU91dEZvckRlbGl2ZXJ5JnV0bV9jb250ZW50PWZvb3RlciZ1dG1fdGVybT1hbnkifQ%3D%3D&amp;fb=https%3A%2F%2Fwww.farfetch.com%2Ffaqs%2F%3Futm_source%3Dparcellab%26utm_medium%3Demail%26utm_campaign%3DOutForDelivery%26utm_content%3Dfooter%26utm_term%3Dany" style="margin:0;Margin:0;color:#222222;text-decoration:underline;font-family:'FarfetchBasis-Regular','Helvetica Neue',Arial,sans-serif;font-weight:400;text-align:left;font-size:11px;line-height:14px" target="_blank">
+                               </a>
+                              </p>
+                             </th>
+                            </tr>
+                           </tbody>
+                          </table>
+                         </th>
+                        </tr>
+                       </tbody>
+                      </table>
+                     </th>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </th>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </center>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div class="yt_article_summary_widget_wrapper" id="yt_article_summary_widget_wrapper" style="display: flex;">
+   <div class="yt_article_summary_widget" id="yt_article_summary_widget">
+    <svg fill="none" height="32" style="filter: brightness(0.8);" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+     <mask fill="black" height="22" id="path-1-outside-1_3606_3145" maskunits="userSpaceOnUse" width="22" x="1" y="1">
+      <rect fill="white" height="22" width="22" x="1" y="1">
+      </rect>
+      <path d="M20.6816 10.1843C20.9588 9.34066 21.0063 8.4399 20.8192 7.57245C20.6321 6.70499 20.217 5.90134 19.6157 5.24216C19.0143 4.58298 18.2478 4.09146 17.393 3.81692C16.5382 3.54238 15.6253 3.49449 14.7459 3.67805C14.1453 3.01747 13.379 2.52468 12.524 2.24931C11.669 1.97394 10.7555 1.92571 9.87559 2.10947C8.99568 2.29324 8.18039 2.70252 7.51181 3.29608C6.84323 3.88965 6.34499 4.64654 6.06725 5.49055C5.18642 5.67292 4.3699 6.08122 3.70003 6.67426C3.03017 7.26731 2.53064 8.02413 2.25182 8.86842C1.97299 9.71271 1.92474 10.6146 2.11192 11.4832C2.2991 12.3517 2.71509 13.1562 3.31795 13.8155C3.09309 14.4899 3.01633 15.2037 3.09278 15.9095C3.16924 16.6154 3.39716 17.2971 3.76139 17.9093C4.30169 18.8351 5.12567 19.568 6.11483 20.0027C7.104 20.4373 8.20738 20.5512 9.26631 20.328C9.74353 20.8568 10.3291 21.2796 10.9844 21.5684C11.6396 21.8571 12.3495 22.0053 13.0672 22.003C14.1516 22.003 15.2081 21.6635 16.0847 21.0334C16.9612 20.4034 17.6125 19.5152 17.9449 18.4968C18.649 18.3539 19.3141 18.0649 19.8962 17.6489C20.4784 17.233 20.9642 16.6997 21.3214 16.0843C21.8585 15.1598 22.0858 14.0915 21.9709 13.032C21.856 11.9724 21.4048 10.9758 20.6816 10.1843ZM13.0798 20.6968C12.191 20.6968 11.3302 20.3894 10.6473 19.828L10.7677 19.7593L14.8029 17.4593C14.9069 17.4047 14.9935 17.3225 15.0528 17.2221C15.1121 17.1216 15.1418 17.0068 15.1386 16.8905V11.2655L16.8427 12.2405C16.8517 12.2441 16.8594 12.2501 16.865 12.2579C16.8706 12.2656 16.8739 12.2748 16.8744 12.2843V16.9343C16.876 17.4289 16.7785 17.9189 16.5875 18.3761C16.3964 18.8333 16.1156 19.2488 15.7611 19.5985C15.4067 19.9482 14.9856 20.2253 14.5222 20.4138C14.0588 20.6023 13.5621 20.6984 13.0608 20.6968H13.0798ZM4.90165 17.2593C4.46164 16.5029 4.3026 15.6189 4.45188 14.7593L4.57224 14.828L8.60749 17.128C8.70379 17.1829 8.81303 17.2118 8.92423 17.2118C9.03543 17.2118 9.14467 17.1829 9.24097 17.128L14.1758 14.3218V16.253C14.1797 16.2608 14.1817 16.2694 14.1817 16.278C14.1817 16.2867 14.1797 16.2953 14.1758 16.303L10.0962 18.628C9.66403 18.8748 9.18685 19.0352 8.69188 19.0999C8.19692 19.1647 7.69387 19.1326 7.21148 19.0055C6.72909 18.8784 6.27681 18.6587 5.88048 18.3591C5.48415 18.0595 5.15154 17.6858 4.90165 17.2593ZM3.83741 8.5843C4.28764 7.82089 4.99655 7.23878 5.83919 6.94055V11.6718C5.83595 11.7857 5.86434 11.8983 5.92128 11.9975C5.97823 12.0966 6.06156 12.1785 6.16227 12.2343L11.0717 15.028L9.36766 16.003C9.34918 16.0092 9.32914 16.0092 9.31065 16.003L5.23106 13.678C4.36041 13.1812 3.72487 12.3642 3.46364 11.4059C3.20242 10.4476 3.33682 9.42624 3.83741 8.56555V8.5843ZM17.8563 11.7968L12.9278 8.9718L14.6319 8.00305C14.6403 7.99741 14.6502 7.99439 14.6604 7.99439C14.6705 7.99439 14.6805 7.99741 14.6889 8.00305L18.7685 10.328C19.3915 10.684 19.8992 11.2072 20.2325 11.8368C20.5659 12.4664 20.7111 13.1764 20.6514 13.8843C20.5916 14.5921 20.3294 15.2687 19.8951 15.8352C19.4608 16.4017 18.8724 16.8349 18.1983 17.0843V12.353C18.1946 12.2391 18.1612 12.1281 18.1013 12.0306C18.0414 11.9332 17.957 11.8527 17.8563 11.7968ZM19.554 9.2968L19.4336 9.2218L15.4047 6.9093C15.3047 6.84846 15.1896 6.81624 15.0721 6.81624C14.9547 6.81624 14.8395 6.84846 14.7396 6.9093L9.8111 9.71555V7.75305C9.8061 7.7445 9.80346 7.7348 9.80346 7.72492C9.80346 7.71505 9.8061 7.70535 9.8111 7.6968L13.897 5.37805C14.5222 5.02257 15.2371 4.85003 15.958 4.88059C16.6789 4.91115 17.3762 5.14356 17.9682 5.55064C18.5601 5.95772 19.0225 6.52265 19.301 7.17939C19.5796 7.83614 19.663 8.55755 19.5413 9.2593L19.554 9.2968ZM8.87989 12.7218L7.1695 11.753C7.15339 11.7405 7.1422 11.7228 7.13782 11.703V7.06555C7.13785 6.35289 7.34371 5.65499 7.73128 5.0536C8.11885 4.45222 8.67209 3.97224 9.32619 3.6699C9.98029 3.36756 10.7082 3.25537 11.4246 3.34647C12.141 3.43757 12.8162 3.7282 13.3712 4.1843L13.2636 4.25305L9.21563 6.55305C9.11158 6.60765 9.02504 6.68981 8.96573 6.79029C8.90642 6.89076 8.87669 7.00557 8.87989 7.1218V12.7218ZM9.80476 10.753L11.9966 9.50305L14.1948 10.753V13.253L11.9966 14.503L9.79843 13.253L9.80476 10.753Z">
+      </path>
+     </mask>
+     <path d="M20.6816 10.1843C20.9588 9.34066 21.0063 8.4399 20.8192 7.57245C20.6321 6.70499 20.217 5.90134 19.6157 5.24216C19.0143 4.58298 18.2478 4.09146 17.393 3.81692C16.5382 3.54238 15.6253 3.49449 14.7459 3.67805C14.1453 3.01747 13.379 2.52468 12.524 2.24931C11.669 1.97394 10.7555 1.92571 9.87559 2.10947C8.99568 2.29324 8.18039 2.70252 7.51181 3.29608C6.84323 3.88965 6.34499 4.64654 6.06725 5.49055C5.18642 5.67292 4.3699 6.08122 3.70003 6.67426C3.03017 7.26731 2.53064 8.02413 2.25182 8.86842C1.97299 9.71271 1.92474 10.6146 2.11192 11.4832C2.2991 12.3517 2.71509 13.1562 3.31795 13.8155C3.09309 14.4899 3.01633 15.2037 3.09278 15.9095C3.16924 16.6154 3.39716 17.2971 3.76139 17.9093C4.30169 18.8351 5.12567 19.568 6.11483 20.0027C7.104 20.4373 8.20738 20.5512 9.26631 20.328C9.74353 20.8568 10.3291 21.2796 10.9844 21.5684C11.6396 21.8571 12.3495 22.0053 13.0672 22.003C14.1516 22.003 15.2081 21.6635 16.0847 21.0334C16.9612 20.4034 17.6125 19.5152 17.9449 18.4968C18.649 18.3539 19.3141 18.0649 19.8962 17.6489C20.4784 17.233 20.9642 16.6997 21.3214 16.0843C21.8585 15.1598 22.0858 14.0915 21.9709 13.032C21.856 11.9724 21.4048 10.9758 20.6816 10.1843ZM13.0798 20.6968C12.191 20.6968 11.3302 20.3894 10.6473 19.828L10.7677 19.7593L14.8029 17.4593C14.9069 17.4047 14.9935 17.3225 15.0528 17.2221C15.1121 17.1216 15.1418 17.0068 15.1386 16.8905V11.2655L16.8427 12.2405C16.8517 12.2441 16.8594 12.2501 16.865 12.2579C16.8706 12.2656 16.8739 12.2748 16.8744 12.2843V16.9343C16.876 17.4289 16.7785 17.9189 16.5875 18.3761C16.3964 18.8333 16.1156 19.2488 15.7611 19.5985C15.4067 19.9482 14.9856 20.2253 14.5222 20.4138C14.0588 20.6023 13.5621 20.6984 13.0608 20.6968H13.0798ZM4.90165 17.2593C4.46164 16.5029 4.3026 15.6189 4.45188 14.7593L4.57224 14.828L8.60749 17.128C8.70379 17.1829 8.81303 17.2118 8.92423 17.2118C9.03543 17.2118 9.14467 17.1829 9.24097 17.128L14.1758 14.3218V16.253C14.1797 16.2608 14.1817 16.2694 14.1817 16.278C14.1817 16.2867 14.1797 16.2953 14.1758 16.303L10.0962 18.628C9.66403 18.8748 9.18685 19.0352 8.69188 19.0999C8.19692 19.1647 7.69387 19.1326 7.21148 19.0055C6.72909 18.8784 6.27681 18.6587 5.88048 18.3591C5.48415 18.0595 5.15154 17.6858 4.90165 17.2593ZM3.83741 8.5843C4.28764 7.82089 4.99655 7.23878 5.83919 6.94055V11.6718C5.83595 11.7857 5.86434 11.8983 5.92128 11.9975C5.97823 12.0966 6.06156 12.1785 6.16227 12.2343L11.0717 15.028L9.36766 16.003C9.34918 16.0092 9.32914 16.0092 9.31065 16.003L5.23106 13.678C4.36041 13.1812 3.72487 12.3642 3.46364 11.4059C3.20242 10.4476 3.33682 9.42624 3.83741 8.56555V8.5843ZM17.8563 11.7968L12.9278 8.9718L14.6319 8.00305C14.6403 7.99741 14.6502 7.99439 14.6604 7.99439C14.6705 7.99439 14.6805 7.99741 14.6889 8.00305L18.7685 10.328C19.3915 10.684 19.8992 11.2072 20.2325 11.8368C20.5659 12.4664 20.7111 13.1764 20.6514 13.8843C20.5916 14.5921 20.3294 15.2687 19.8951 15.8352C19.4608 16.4017 18.8724 16.8349 18.1983 17.0843V12.353C18.1946 12.2391 18.1612 12.1281 18.1013 12.0306C18.0414 11.9332 17.957 11.8527 17.8563 11.7968ZM19.554 9.2968L19.4336 9.2218L15.4047 6.9093C15.3047 6.84846 15.1896 6.81624 15.0721 6.81624C14.9547 6.81624 14.8395 6.84846 14.7396 6.9093L9.8111 9.71555V7.75305C9.8061 7.7445 9.80346 7.7348 9.80346 7.72492C9.80346 7.71505 9.8061 7.70535 9.8111 7.6968L13.897 5.37805C14.5222 5.02257 15.2371 4.85003 15.958 4.88059C16.6789 4.91115 17.3762 5.14356 17.9682 5.55064C18.5601 5.95772 19.0225 6.52265 19.301 7.17939C19.5796 7.83614 19.663 8.55755 19.5413 9.2593L19.554 9.2968ZM8.87989 12.7218L7.1695 11.753C7.15339 11.7405 7.1422 11.7228 7.13782 11.703V7.06555C7.13785 6.35289 7.34371 5.65499 7.73128 5.0536C8.11885 4.45222 8.67209 3.97224 9.32619 3.6699C9.98029 3.36756 10.7082 3.25537 11.4246 3.34647C12.141 3.43757 12.8162 3.7282 13.3712 4.1843L13.2636 4.25305L9.21563 6.55305C9.11158 6.60765 9.02504 6.68981 8.96573 6.79029C8.90642 6.89076 8.87669 7.00557 8.87989 7.1218V12.7218ZM9.80476 10.753L11.9966 9.50305L14.1948 10.753V13.253L11.9966 14.503L9.79843 13.253L9.80476 10.753Z" fill="#828282">
+     </path>
+     <path d="M20.6816 10.1843C20.9588 9.34066 21.0063 8.4399 20.8192 7.57245C20.6321 6.70499 20.217 5.90134 19.6157 5.24216C19.0143 4.58298 18.2478 4.09146 17.393 3.81692C16.5382 3.54238 15.6253 3.49449 14.7459 3.67805C14.1453 3.01747 13.379 2.52468 12.524 2.24931C11.669 1.97394 10.7555 1.92571 9.87559 2.10947C8.99568 2.29324 8.18039 2.70252 7.51181 3.29608C6.84323 3.88965 6.34499 4.64654 6.06725 5.49055C5.18642 5.67292 4.3699 6.08122 3.70003 6.67426C3.03017 7.26731 2.53064 8.02413 2.25182 8.86842C1.97299 9.71271 1.92474 10.6146 2.11192 11.4832C2.2991 12.3517 2.71509 13.1562 3.31795 13.8155C3.09309 14.4899 3.01633 15.2037 3.09278 15.9095C3.16924 16.6154 3.39716 17.2971 3.76139 17.9093C4.30169 18.8351 5.12567 19.568 6.11483 20.0027C7.104 20.4373 8.20738 20.5512 9.26631 20.328C9.74353 20.8568 10.3291 21.2796 10.9844 21.5684C11.6396 21.8571 12.3495 22.0053 13.0672 22.003C14.1516 22.003 15.2081 21.6635 16.0847 21.0334C16.9612 20.4034 17.6125 19.5152 17.9449 18.4968C18.649 18.3539 19.3141 18.0649 19.8962 17.6489C20.4784 17.233 20.9642 16.6997 21.3214 16.0843C21.8585 15.1598 22.0858 14.0915 21.9709 13.032C21.856 11.9724 21.4048 10.9758 20.6816 10.1843ZM13.0798 20.6968C12.191 20.6968 11.3302 20.3894 10.6473 19.828L10.7677 19.7593L14.8029 17.4593C14.9069 17.4047 14.9935 17.3225 15.0528 17.2221C15.1121 17.1216 15.1418 17.0068 15.1386 16.8905V11.2655L16.8427 12.2405C16.8517 12.2441 16.8594 12.2501 16.865 12.2579C16.8706 12.2656 16.8739 12.2748 16.8744 12.2843V16.9343C16.876 17.4289 16.7785 17.9189 16.5875 18.3761C16.3964 18.8333 16.1156 19.2488 15.7611 19.5985C15.4067 19.9482 14.9856 20.2253 14.5222 20.4138C14.0588 20.6023 13.5621 20.6984 13.0608 20.6968H13.0798ZM4.90165 17.2593C4.46164 16.5029 4.3026 15.6189 4.45188 14.7593L4.57224 14.828L8.60749 17.128C8.70379 17.1829 8.81303 17.2118 8.92423 17.2118C9.03543 17.2118 9.14467 17.1829 9.24097 17.128L14.1758 14.3218V16.253C14.1797 16.2608 14.1817 16.2694 14.1817 16.278C14.1817 16.2867 14.1797 16.2953 14.1758 16.303L10.0962 18.628C9.66403 18.8748 9.18685 19.0352 8.69188 19.0999C8.19692 19.1647 7.69387 19.1326 7.21148 19.0055C6.72909 18.8784 6.27681 18.6587 5.88048 18.3591C5.48415 18.0595 5.15154 17.6858 4.90165 17.2593ZM3.83741 8.5843C4.28764 7.82089 4.99655 7.23878 5.83919 6.94055V11.6718C5.83595 11.7857 5.86434 11.8983 5.92128 11.9975C5.97823 12.0966 6.06156 12.1785 6.16227 12.2343L11.0717 15.028L9.36766 16.003C9.34918 16.0092 9.32914 16.0092 9.31065 16.003L5.23106 13.678C4.36041 13.1812 3.72487 12.3642 3.46364 11.4059C3.20242 10.4476 3.33682 9.42624 3.83741 8.56555V8.5843ZM17.8563 11.7968L12.9278 8.9718L14.6319 8.00305C14.6403 7.99741 14.6502 7.99439 14.6604 7.99439C14.6705 7.99439 14.6805 7.99741 14.6889 8.00305L18.7685 10.328C19.3915 10.684 19.8992 11.2072 20.2325 11.8368C20.5659 12.4664 20.7111 13.1764 20.6514 13.8843C20.5916 14.5921 20.3294 15.2687 19.8951 15.8352C19.4608 16.4017 18.8724 16.8349 18.1983 17.0843V12.353C18.1946 12.2391 18.1612 12.1281 18.1013 12.0306C18.0414 11.9332 17.957 11.8527 17.8563 11.7968ZM19.554 9.2968L19.4336 9.2218L15.4047 6.9093C15.3047 6.84846 15.1896 6.81624 15.0721 6.81624C14.9547 6.81624 14.8395 6.84846 14.7396 6.9093L9.8111 9.71555V7.75305C9.8061 7.7445 9.80346 7.7348 9.80346 7.72492C9.80346 7.71505 9.8061 7.70535 9.8111 7.6968L13.897 5.37805C14.5222 5.02257 15.2371 4.85003 15.958 4.88059C16.6789 4.91115 17.3762 5.14356 17.9682 5.55064C18.5601 5.95772 19.0225 6.52265 19.301 7.17939C19.5796 7.83614 19.663 8.55755 19.5413 9.2593L19.554 9.2968ZM8.87989 12.7218L7.1695 11.753C7.15339 11.7405 7.1422 11.7228 7.13782 11.703V7.06555C7.13785 6.35289 7.34371 5.65499 7.73128 5.0536C8.11885 4.45222 8.67209 3.97224 9.32619 3.6699C9.98029 3.36756 10.7082 3.25537 11.4246 3.34647C12.141 3.43757 12.8162 3.7282 13.3712 4.1843L13.2636 4.25305L9.21563 6.55305C9.11158 6.60765 9.02504 6.68981 8.96573 6.79029C8.90642 6.89076 8.87669 7.00557 8.87989 7.1218V12.7218ZM9.80476 10.753L11.9966 9.50305L14.1948 10.753V13.253L11.9966 14.503L9.79843 13.253L9.80476 10.753Z" mask="url(#path-1-outside-1_3606_3145)" stroke="#828282" stroke-width="0.2">
+     </path>
+    </svg>
+   </div>
+   <div class="yt_article_summary_close_button" id="yt_article_summary_close_button">
+    ×
+   </div>
+  </div>
+ </body>
+</html>
+8v~N6۾
