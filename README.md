@@ -6,10 +6,10 @@
   <h3 align="center">[Source Code] - Maison</h3>
 
   <p align="center">
-1. Change your SMTP files in emails/normal.py and in emails/spoofed.py<br>
-2. Spoofed.py needs a cracked smtp server you can get one here https://spamir.fr (There is a cracked smtp server use it aslong it works.)<br>
-3.You may need to change proxies you can buy them at https://zyte.com and you can change them under modals/(every single brand) and scroll down till you see the response section and change the api key there.<br>
-4.Change the config.json file to your config.<br>
+1. Change your SMTP files in emails/normal.py and in emails/spoofed.py<br><br>
+2. Spoofed.py needs a cracked smtp server you can get one here https://spamir.fr (There is a cracked smtp server use it aslong it works.)<br><br>
+3.You may need to change proxies you can buy them at https://zyte.com and you can change them under modals/(every single brand) and scroll down till you see the response section and change the api key there.<br><br>
+4.Change the config.json file to your config.<br><br>
 <br>
     <br>
 The bot is now ready to use!<br>
