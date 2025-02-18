@@ -2,27 +2,29 @@
 
 
 <p align="center">
-  <a href="https://youtu.be/ut8Yj_lU9J8?si=FuhXKSF-XgFgzQFt">
-    <img src="https://cdn.discordapp.com/attachments/1086987915642552410/1313593937935466687/maisonv2.png?ex=67515bf0&is=67500a70&hm=e615cee33e93787a8ebaf23cbdded40f2064615d35eb60813081bd0bd4dd9912&" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">[Receipt Generator] - Maison</h3>
+  <h3 align="center">[Source Code] - Maison</h3>
 
   <p align="center">
-    This is a discord bot that generates receipts for StockX, Goat, Apple and more. This is the perfect thing to make reselling more safe.
-    Join our discord to see what generators we got and what you can do. Trust me it is worth it.
-    <br/>
-    <br/>
-    <a href="https://discord.gg/maison">Discord</a>
-    ・
-    <a href="https://youtu.be/ut8Yj_lU9J8?si=FuhXKSF-XgFgzQFt">Showcase</a>
-    ・
-    <a href="https://maisonreceipts.cc">Website</a>
+  Change your SMTP files in emails/normal.py and in emails/spoofed.py
+  Spoofed.py needs a cracked smtp server you can get one here https://spamir.fr
+  
+  I published the cracked smtp server use it aslong it works.
+  
+  You may need to change proxies you can buy them at https://zyte.com and you can change them under modals/(every single brand) and scroll down till you see the response section and change the api key there.
+  
+  Change the config.json file to your config.
+  
+  The bot is now ready to use!
+  
+  do /help to see all commands
+  
+  XYZ WAS A SCAMMER
+  
+  This is the official bot from discord.gg/maison
+  
+  If you have questions Contact me on Telegram -> https://t.me/xxx89_89
   </p>
-</p>
-
-<p align="center">
-  <img alt="preview" src="https://cdn.discordapp.com/attachments/1086987915642552410/1313979134187278336/Frame22.png?ex=675219ee&is=6750c86e&hm=37b67ae886a765e5975c720477b715256e1f51d5f9e0b565c1edf5746ac36087&">
 </p>
 
 
