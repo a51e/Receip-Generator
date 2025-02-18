@@ -19,7 +19,7 @@
 🌐 This is the official bot from discord.gg/maison<br>
 <br>
     <br>
-📲 If you have questions Contact me on Telegram -> https://t.me/xxx89_89
+📲 If you have questions Contact me on Telegram -> https://t.me/xxx89cr
   </p>
 </p>
 
