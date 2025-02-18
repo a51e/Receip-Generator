@@ -1,4 +1,4 @@
-# StockX Receip Generator
+# RECEIPT GENERATOR SOURCE CODE
 
 
 <p align="center">
